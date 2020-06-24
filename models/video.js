@@ -7,7 +7,9 @@ const videoSchema = new Schema({
   videoId: {type: String, required: true},
   videoUrl: {type: String, required: true},
   description: {type: String, required: true},
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  user: [{type: mongoose.Schema.Types.ObjectId,
+  ref: "User"}]
 });
 
 const Video = mongoose.model("Video", videoSchema);
