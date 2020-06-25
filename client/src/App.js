@@ -1,8 +1,9 @@
 import React from "react";
-import Books from "./pages/Books";
+import Books from "./pages/Diy";
 import Nav from "./components/Nav";
 
-function App() {
+function App ()
+{
   return (
     <div>
       <Nav />
