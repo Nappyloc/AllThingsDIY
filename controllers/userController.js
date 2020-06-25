@@ -4,32 +4,30 @@ const cookie = require("cookie-parser");
 
 const saltRounds = 10;
 
-// Defining methods for the booksController
+// Defining methods for the userController
 module.exports = {
+  // returns all users in the database
   findAll: function(req, res) {
     db.User
       .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  // returns a user by the passed user id
   findById: function(req, res) {
     db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
-    db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+  // updates a user with the matching user id
   update: function(req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  // removes a user from the database with a matching id
   remove: function(req, res) {
     db.User
       .findById({ _id: req.params.id })
@@ -37,6 +35,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  // creates a new user in the database
   createUser: function (req, res) {
     // console.log("First Step")
     db.User.findOne({ userName: req.body.userName })
@@ -63,6 +62,7 @@ module.exports = {
       };
     });
   },
+  // Logs a user into the database
   userLogin: function (req, res) {
     db.User.findOne({ userName: req.body.userName })
     .then(function(user) {

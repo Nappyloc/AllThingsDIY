@@ -8,7 +8,7 @@ module.exports =
         let searchTopic = req.params.topic
 
         axios.get
-            // update this with .env to hide the api key
+        
             ( "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=DIY%20" + searchTopic + "&key=" + API_KEY,
 
                 {
@@ -41,7 +41,7 @@ module.exports =
 
 
 
-            } ).catch( err => res.status( 422 ).json( err ) );
+            } ).catch( err => res.json( err ) );
     }
 
 
