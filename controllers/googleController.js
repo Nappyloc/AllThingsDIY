@@ -1,4 +1,5 @@
 const axios = require( "axios" ).default
+const API_KEY = require( "../key" )
 
 module.exports =
 {
@@ -7,8 +8,8 @@ module.exports =
         let searchTopic = req.params.topic
 
         axios.get
-        // update this with .env to hide the api key
-            ( "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=DIY%20" + searchTopic +"&key=" + "AIzaSyDzIBhRC1bkXzlqa87cSgZ37fPXiGLSQfo",
+            // update this with .env to hide the api key
+            ( "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=DIY%20" + searchTopic + "&key=" + API_KEY,
 
                 {
                     headers: {
