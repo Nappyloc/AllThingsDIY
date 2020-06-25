@@ -38,14 +38,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   createUser: function (req, res) {
-    console.log("First Step")
-    db.User.findOne({
-      where: {
-        userName: req.body.userName
-      }
-    }).then(function(user) {
-      console.log("couldnt find existing user")
+    // console.log("First Step")
+    db.User.findOne({ userName: req.body.userName })
+    .then(function(user) {
+      // console.log("couldnt find existing user")
       if (user) {
+        // console.log(user.userName)
         res.status(500).send("createAlert");
         console.log("User already exists");
       } else {
@@ -66,20 +64,20 @@ module.exports = {
     });
   },
   userLogin: function (req, res) {
-    db.User.findOne({
-      where: {
-        userName: req.body.userName
-      }
-    }).then(function(user) {
-      // console.log("User is = " + user.id);
+    db.User.findOne({ userName: req.body.userName })
+    .then(function(user) {
+      // console.log("User is = " + user.userName);
       if (!user) {
         console.log("Incorrect user");
         res.status(500).send("userAlert");
       } else {
         res.cookie("id", user.id, { expire: 360000 + Date.now() });
+        // console.log("comparing passwords")
         bcrypt.compare(req.body.password, user.password, function(err, result) {
+          // console.log("body: " + req.body.password)
+          // console.log("db: " + user.password)
           if (result === true) {
-            console.log("RESULT: " + result);
+            // console.log("RESULT: " + result);
             console.log("Login is good!");
             res.json({});
           } else {
