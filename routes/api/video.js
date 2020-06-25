@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const videoController = require("../../controllers/videoController");
 
-// Matches with "/api/video" & Video controller file find all and create
-router.route("/")
+// Matches with "/api/video/all" & Video controller file find all and create
+router.route("/all")
   .get(videoController.findAll)
   .post(videoController.create);
 
@@ -18,5 +18,15 @@ router
   router
   .route("/save")
   .post(videoController.create)
+
+// Matches with "/api/video" & Video controller findDisplay
+router
+.route("/")
+.get(videoController.findDisplay)
+
+// Matches with "/api/video/delete" & Video controller remove
+router
+.route("/delete")
+.delete(videoController.remove)
 
 module.exports = router;
