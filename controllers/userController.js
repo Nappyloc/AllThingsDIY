@@ -46,16 +46,16 @@ module.exports = {
         res.status(500).send("createAlert");
         console.log("User already exists");
       } else {
-        console.log("creating pw")
+        console.log("Creating hash PW")
         bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
           db.User.create({
             userName: req.body.userName,
             password: hash
           }).then(function(data) {
             if (data) {
-              console.log("TEST FOR HITTING userCreate api route worked!");
+              // console.log("TEST FOR HITTING userCreate api route worked!");
               // res.redirect("..");
-              res.send("WORKS!")
+              res.send("Created User!")
             }
           });
         });
