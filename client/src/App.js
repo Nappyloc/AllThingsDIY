@@ -1,15 +1,8 @@
 import React from "react";
-import Books from "./pages/Diy";
-import Nav from "./components/Nav";
+import Login from "./components/login";
 
-function App ()
-{
-  return (
-    <div>
-      <Nav />
-      <Books />
-    </div>
-  );
+function App() {
+  return <Login />;
 }
 
 export default App;
