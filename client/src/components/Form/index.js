@@ -1,26 +1,27 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
-const FormPage = () => {
-return (
-<MDBContainer>
-  <MDBRow>
-    <MDBCol md="6">
-      <form>
-        <p className="h5 text-center mb-4">Sign in</p>
-        <div className="grey-text">
-          <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong"
-            success="right" />
-          <MDBInput label="Type your password" icon="lock" group type="password" validate />
-        </div>
-        <div className="text-center">
-          <MDBBtn>Login</MDBBtn>
-        </div>
-      </form>
-    </MDBCol>
-  </MDBRow>
-</MDBContainer>
-);
-};
+// This file exports the Input, TextArea, and FormBtn components
 
-export default FormPage;
+export function Input(props) {
+  return (
+    <div className="form-group">
+      <input className="form-control" {...props} />
+    </div>
+  );
+}
+
+export function TextArea(props) {
+  return (
+    <div className="form-group">
+      <textarea className="form-control" rows="20" {...props} />
+    </div>
+  );
+}
+
+export function FormBtn(props) {
+  return (
+    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+      {props.children}
+    </button>
+  );
+}
