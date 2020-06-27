@@ -3,35 +3,34 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreac
 
 const FormPage = () => {
   return (
+    
     <MDBContainer>
       <MDBRow>
-        <MDBCol md='6'>
           <MDBCard
             className='card-image'
             style={{
-              backgroundImage:
-                'url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)',
+              backgroundColor:
+               'default-color-dark',
               width: '28rem'
             }}
           >
-            <div className='text-white rgba-stylish-strong py-5 px-5 z-depth-4'>
+            <div className='text-dark rgba-stylish-strong py-5 px-5 z-depth-4'>
               <div className='text-center'>
                 <h3 className='white-text mb-5 mt-4 font-weight-bold'>
-                  <strong>SIGN</strong>
-                  <a href='#!' className='green-text font-weight-bold'>
-                    <strong> UP</strong>
-                  </a>
+                <h3 className='green-text font-weight-bold'>
+                  <strong>SIGN UP</strong>
+                  </h3>
                 </h3>
               </div>
               <MDBInput
-                label='Your email'
+                label='New username'
                 group
                 type='text'
                 validate
                 labelClass='white-text'
               />
               <MDBInput
-                label='Your password'
+                label='New password'
                 group
                 type='password'
                 validate
@@ -52,6 +51,7 @@ const FormPage = () => {
                   labelClass='white-text'
                 />
               </div>
+              <MDBCol>
               <MDBRow className='d-flex align-items-center mb-4'>
                 <div className='text-center mb-3 col-md-12'>
                   <MDBBtn
@@ -71,10 +71,10 @@ const FormPage = () => {
                     Log in
                   </a>
                 </p>
-              </MDBCol>
+                </MDBCol>
+                </MDBCol>
             </div>
           </MDBCard>
-        </MDBCol>
       </MDBRow>
     </MDBContainer>
   );
