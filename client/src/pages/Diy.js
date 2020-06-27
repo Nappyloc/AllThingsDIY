@@ -6,56 +6,60 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class Books extends Component
+{
   state = {
-    books: []
+    video: []
   };
 
-  componentDidMount() {
-    this.loadBooks();
+  componentDidMount ()
+  {
+    this.loadDisplay();
   }
 
-  loadBooks = () => {
-    API.getBooks()
-      .then(res => this.setState({ books: res.data }))
-      .catch(err => console.log(err));
+  loadDisplay = () =>
+  {
+    API.getDisplay()
+      .then( res => this.setState( { video: res.data } ) )
+      .catch( err => console.log( err ) );
   };
 
-  render() {
+  render ()
+  {
     return (
       <Container fluid>
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>What Should I Create?</h1>
             </Jumbotron>
             <form>
               <Input name="title" placeholder="Title (required)" />
               <Input name="author" placeholder="Author (required)" />
               <TextArea name="synopsis" placeholder="Synopsis (Optional)" />
-              <FormBtn>Submit Book</FormBtn>
+              <FormBtn>Save Video</FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Video's on My List</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.video.length ? (
               <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <a href={"/books/" + book._id}>
+                {this.state.video.map( video => (
+                  <ListItem key={video._id}>
+                    <a href={"/books/" + video._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {video.title} 
                       </strong>
                     </a>
                     <DeleteBtn />
                   </ListItem>
-                ))}
+                ) )}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>

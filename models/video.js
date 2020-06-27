@@ -3,11 +3,13 @@ const Schema = mongoose.Schema;
 
 const videoSchema = new Schema({
   title: { type: String, required: true },
-  // thumbnail: {type: String, required: true},
-  // id: {type: String, required: true},
-  author: { type: String, required: true },
-  url: {type: String, required: true},
-  date: { type: Date, default: Date.now }
+  thumbnail: {type: String, required: true},
+  videoId: {type: String, required: true},
+  videoUrl: {type: String, required: true},
+  description: {type: String, required: true},
+  date: { type: Date, default: Date.now },
+  user: [{type: mongoose.Schema.Types.ObjectId,
+  ref: "User"}]
 });
 
 const Video = mongoose.model("Video", videoSchema);
