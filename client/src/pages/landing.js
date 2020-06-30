@@ -57,7 +57,6 @@ class ClassicFormPage extends React.Component {
           <div>
             <MDBNavbar dark expand="lg" fixed="top">
               <MDBContainer>
-                
                 <MDBNavbarToggler
                   onClick={this.toggleCollapse("navbarCollapse")}
                 />
