@@ -11,10 +11,10 @@ export default () => (
         <MDBCol>
         <MDBNav className="justify-content-center">
       <MDBNavItem>
-        <MDBNavLink active to="/">Home</MDBNavLink>
+        <MDBNavLink to="/">Home</MDBNavLink>
       </MDBNavItem>
       <MDBNavItem>
-        <MDBNavLink to="#!">Link</MDBNavLink>
+        <MDBNavLink to="/login">Link</MDBNavLink>
       </MDBNavItem>
       <MDBNavItem>
         <MDBNavLink to="#!">Link</MDBNavLink>
