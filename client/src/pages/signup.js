@@ -33,6 +33,9 @@ class FormPage extends Component {
 
     return (
       <MDBContainer>
+        <br></br>
+        <br></br>
+        <br></br>
         <MDBRow>
           <MDBCard
             className='card-image center'
@@ -77,7 +80,7 @@ class FormPage extends Component {
                     type='button'
                     className='btn-block z-depth-1'
                     onClick={this.createUsername}
-                  >Sign in
+                  >Sign up
                   </MDBBtn>
                 </div>
               </MDBRow>
