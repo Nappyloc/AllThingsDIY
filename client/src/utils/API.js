@@ -2,25 +2,38 @@ import axios from "axios";
 
 export default {
   // Gets most recent 5 videos saved to the database for page load
-  getDisplay: function() {
-    return axios.get("/api/video/");
+  getDisplay: function ()
+  {
+    return axios.get( "/api/video/" );
   },
   // Save a video to the database
-  saveVideo: function(videoData) {
-    return axios.post("/api/video/save/", videoData)
+  saveVideo: function ( videoData )
+  {
+    return axios.post( "/api/video/save/", videoData )
   },
   // Gets all videos from the database
-  getAllVideos: function() {
-    return axios.get("api/video/all/");
+  getAllVideos: function ()
+  {
+    return axios.get( "api/video/all/" );
   },
   // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/video/delete/" + id);
+  deleteBook: function ( id )
+  {
+    return axios.delete( "/api/video/delete/" + id );
   },
-  createUser: function(userData) {
-    return axios.post("/api/user/createUser", userData)
+  createUser: function ( userData )
+  {
+    return axios.post( "/api/user/createUser", userData )
   },
-  userLogin: function(userData) {
-    return axios.post("/api/user/userLogin", userData)
+  userLogin: function ( userData )
+  {
+    return axios.post( "/api/user/userLogin", userData )
+  },
+
+  // Youtube search
+  topicSearch: function ( searchTopic )
+  {
+    return axios.get( "api/google/search/" + searchTopic )
+
   }
 };
