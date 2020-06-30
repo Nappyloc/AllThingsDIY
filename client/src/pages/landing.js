@@ -1,5 +1,8 @@
 import React from "react";
-import { FaBeer } from 'react-icons/fa';
+import {Route,Switch} from "react-router-dom";
+import Signup from "./signup";
+
+// import { FaBeer } from 'react-icons/fa';
 import { BrowserRouter as Router } from "react-router-dom";
 import {
   MDBNavbar,
@@ -24,9 +27,11 @@ import {
   MDBDropdown,
   MDBDropdownToggle, 
   MDBDropdownMenu, 
-  MDBDropdownItem
+  MDBDropdownItem,
+  MDBLink
 } from "mdbreact";
-import "./style.css";
+import "./landing.css";
+
 
 class ClassicFormPage extends React.Component {
   state = {
@@ -49,11 +54,10 @@ class ClassicFormPage extends React.Component {
     );
     return (
       <div id="classicformpage">
-        <Router>
           <div>
             <MDBNavbar dark expand="lg" fixed="top">
               <MDBContainer>
-               
+                
                 <MDBNavbarToggler
                   onClick={this.toggleCollapse("navbarCollapse")}
                 />
@@ -74,29 +78,28 @@ class ClassicFormPage extends React.Component {
           <MDBDropdownItem>Separated link</MDBDropdownItem>
         </MDBDropdownMenu>
       </MDBDropdown>
-                  <MDBNavbarNav left>
+               <MDBNavbarNav left>
                     <MDBNavItem active>
-                      <MDBNavLink to="#!">Home</MDBNavLink>
+                      <MDBNavLink to="/">Home</MDBNavLink>
                     </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="#!">Profile</MDBNavLink>
-                    </MDBNavItem>
+                        <MDBNavItem>
+                           <MDBNavLink to="/profile">Profile</MDBNavLink>
+                       </MDBNavItem>
                   </MDBNavbarNav>
-                  <MDBNavbarNav right>
+                      <MDBNavbarNav right>
                     <MDBNavItem active>
-                      <MDBNavLink to="#!">Login</MDBNavLink>
+                      <MDBNavLink to="/login">Login</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem active>
-                      <MDBNavLink to="#!">  SignUp</MDBNavLink>
+                      <MDBNavLink to="/signup"> SignUp</MDBNavLink> 
                     </MDBNavItem>
                     </MDBNavbarNav>
                 </MDBCollapse>
               </MDBContainer>
             </MDBNavbar>
-            
+           
             {this.state.collapseID && overlay}
           </div>
-        </Router>
         
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
@@ -107,7 +110,6 @@ class ClassicFormPage extends React.Component {
                   delay=".3s"
                   className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5"
                 >
-                 
                   <hr className="hr-light" />
                 </MDBAnimation>       
               </MDBRow>
@@ -123,9 +125,6 @@ class ClassicFormPage extends React.Component {
                             height="250px"
                           />
                         </div>
-                  
-                   
-                 
             </MDBCol>
         </MDBRow>
             </MDBContainer>
