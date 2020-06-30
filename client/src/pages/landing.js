@@ -1,9 +1,6 @@
 import React from "react";
-import {Route,Switch} from "react-router-dom";
-import Signup from "./signup";
-
 // import { FaBeer } from 'react-icons/fa';
-import { BrowserRouter as Router } from "react-router-dom";
+
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -57,7 +54,6 @@ class ClassicFormPage extends React.Component {
           <div>
             <MDBNavbar dark expand="lg" fixed="top">
               <MDBContainer>
-                
                 <MDBNavbarToggler
                   onClick={this.toggleCollapse("navbarCollapse")}
                 />
