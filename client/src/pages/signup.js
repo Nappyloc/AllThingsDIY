@@ -25,6 +25,7 @@ class FormPage extends Component {
         password: this.state.password
       })
         .then(res => this.setState({ userName: "", password: "" }))
+        .then(res => window.location = "/login")
         .catch(err => console.log(err));
     }
   };
@@ -62,9 +63,9 @@ class FormPage extends Component {
               labelClass='white-text'
             />
             <MDBInput
-            value={this.state.password}
-            onChange={this.inputChange}
-            name="password"
+              value={this.state.password}
+              onChange={this.inputChange}
+              name="password"
               label='New password'
               group
               type='password'

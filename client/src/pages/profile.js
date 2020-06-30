@@ -1,8 +1,6 @@
 import React from "react";
-import { FiTwitter } from 'react-icons/fa';
 import { BrowserRouter } from 'react-router-dom';
-import { MDBNav, MDBNavItem, MDBNavLink, MDBCol,MDBRow ,
-MDBIcon,MDBJumbotron,MDBCardImage,MDBCardTitle,MDBCardBody,MDBCardText,MDBContainer} from "mdbreact";
+import { MDBCol,MDBRow , MDBJumbotron,MDBCardImage,MDBCardTitle,MDBCardBody,MDBCardText,MDBContainer} from "mdbreact";
 import "./profile.css"
 
 export default () => (
@@ -36,7 +34,7 @@ export default () => (
 
               <MDBCol className="d-flex justify-content-center mt-4" md="12">
                 <MDBCol md="3" className="d-flex justify-content-around">
-                  <a href="#"><MDBIcon
+                  {/* <a href="#"><MDBIcon
                     fab
                     icon="linkedin-in"
                     className="grey-text"
@@ -53,7 +51,7 @@ export default () => (
                     icon="facebook-f"
                     className="grey-text"
                     size="lg"
-                  /></a>
+                  /></a> */}
                 </MDBCol>
               </MDBCol>
 
@@ -86,7 +84,7 @@ export default () => (
 
           <MDBCol className="d-flex justify-content-center mt-4" md="12">
             <MDBCol md="3" className="d-flex justify-content-around">
-              <a href="#"><MDBIcon
+              {/* <a href="#"><MDBIcon
                 fab
                 icon="linkedin-in"
                 className="grey-text"
@@ -103,7 +101,7 @@ export default () => (
                 icon="facebook-f"
                 className="grey-text"
                 size="lg"
-              /></a>
+              /></a> */}
             </MDBCol>
           </MDBCol>
 
@@ -140,7 +138,7 @@ export default () => (
 
           <MDBCol className="d-flex justify-content-center mt-4" md="12">
             <MDBCol md="3" className="d-flex justify-content-around ">
-              <a href="#"><MDBIcon
+              {/* <a href="#"><MDBIcon
                 fab
                 icon="linkedin-in"
                 className="grey-text"
@@ -154,7 +152,7 @@ export default () => (
                 icon="facebook-f"
                 className="grey-text"
                 size="lg"
-              /></a>
+              /></a> */}
             </MDBCol>
           </MDBCol>
 

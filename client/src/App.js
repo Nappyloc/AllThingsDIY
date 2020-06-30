@@ -5,6 +5,7 @@ import Signup from "./pages/signup";
 import Profile from "./pages/profile";
 import Login from "./pages/login";
 import Navbar from "./components/Nav/index";
+import NoMatch from "./pages/NoMatch";
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
       <Route path="/signup" component={Signup}/>
       <Route path="/login" component={Login}/>
       <Route path="/profile" component={Profile}/>
+      <Route component={NoMatch} />
       </Switch>
   
   </div>
