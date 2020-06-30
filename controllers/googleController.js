@@ -5,10 +5,11 @@ module.exports =
 {
     search: function ( req, res )
     {
+        console.log( "The serch topic was: " + req.params.topic )
         let searchTopic = req.params.topic
 
         axios.get
-        
+
             ( "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=DIY%20" + searchTopic + "&key=" + API_KEY,
 
                 {
