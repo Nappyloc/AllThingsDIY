@@ -16,6 +16,11 @@ export default {
   // Deletes the book with the given id
   deleteBook: function(id) {
     return axios.delete("/api/video/delete/" + id);
+  },
+  createUser: function(userData) {
+    return axios.post("/api/user/createUser", userData)
+  },
+  userLogin: function(userData) {
+    return axios.post("/api/user/userLogin", userData)
   }
-  
 };
