@@ -7,22 +7,10 @@ import "./profile.css"
 
 export default () => (
   <BrowserRouter>
-    <MDBRow>
-        <MDBCol>
-        <MDBNav className="justify-content-center">
-      <MDBNavItem>
-        <MDBNavLink to="/">Home</MDBNavLink>
-      </MDBNavItem>
-      <MDBNavItem>
-        <MDBNavLink to="/login">Link</MDBNavLink>
-      </MDBNavItem>
-      <MDBNavItem>
-        <MDBNavLink to="#!">Link</MDBNavLink>
-      </MDBNavItem>
-    
-    </MDBNav>
-        </MDBCol>
-    </MDBRow>
+  <MDBRow>
+    <MDBCol></MDBCol>
+  </MDBRow>
+    <br></br>
     <MDBRow>
         <MDBCol md="4">
 
@@ -74,10 +62,8 @@ export default () => (
         </MDBCol>
       </MDBRow>
     </MDBContainer>
-  
         </MDBCol>
         <MDBCol md="4">
-
 <MDBContainer className="mt-5 text-center">
   <MDBRow>
     <MDBCol>
