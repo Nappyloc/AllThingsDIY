@@ -13,9 +13,9 @@ router
   .put( userController.update )
   .delete( userController.remove );
 
-// Matches with "api/user/userCreate" and User controller createUser
+// Matches with "api/user/createUser" and User controller createUser
 router
-  .route( "/userCreate" )
+  .route( "/createUser" )
   .post( userController.createUser )
 
 // Matches with "api/user/userLogin" and User controller userlogin
