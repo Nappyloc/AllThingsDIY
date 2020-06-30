@@ -1,14 +1,32 @@
 import React from "react";
 // import { FaBeer } from 'react-icons/fa';
 
-import {
+import
+{
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBNavbarToggler,
+  MDBCollapse,
   MDBMask,
   MDBRow,
   MDBCol,
+  MDBIcon,
+  MDBBtn,
   MDBView,
   MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+  MDBFormInline,
   MDBAnimation,
-
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBLink
 } from "mdbreact";
 import "./landing.css";
 import API from "../utils/API";
