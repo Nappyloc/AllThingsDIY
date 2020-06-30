@@ -1,9 +1,6 @@
 import React from "react";
-import {Route,Switch} from "react-router-dom";
-import Signup from "./signup";
-
 // import { FaBeer } from 'react-icons/fa';
-import { BrowserRouter as Router } from "react-router-dom";
+
 import {
   MDBNavbar,
   MDBNavbarBrand,
