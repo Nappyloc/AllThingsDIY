@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../components/MainNav/index";
 // import { FaBeer } from 'react-icons/fa';
 
 import
@@ -50,8 +51,11 @@ class ClassicFormPage extends React.Component
 
   render ()
   {
+   
     return (
+      
       <div id="classicformpage">
+         <Navbar/>
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
             <MDBContainer>
