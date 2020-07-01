@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Navbar from "../components/MainNav/index"
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreact';
 
 class FormPage extends Component {
@@ -32,12 +33,12 @@ class FormPage extends Component {
   render() {
 
     return (
-   
+      
       <MDBContainer>
         <br></br>
         <br></br>
         <br></br>
-         
+        <Navbar/>
         <MDBRow>
           <MDBCard
             className='card-image center'
