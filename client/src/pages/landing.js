@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/MainNav/index";
-import MainCard from "../components/MainCard"
+import MainCard from "../components/MainCard";
+import SavedCard from "../components/SavedCard"
 
 // import { FaBeer } from 'react-icons/fa';
 
@@ -18,7 +19,6 @@ import
 } from "mdbreact";
 import "./landing.css";
 import API from "../utils/API";
-const cookie = require("cookie-parser");
 // const user = res.cookie.userid
 
 
@@ -80,6 +80,15 @@ class ClassicFormPage extends React.Component
   saveVideo = (video, event) => {
     event.preventDefault()
     video.user = this.state.userId
+    API.saveVideo(video)
+    .then(res => window.location ="profile")
+    .catch(err => console.log(err))
+  }
+
+  saveExistingVideo = (video, event) => {
+    event.preventDefault()
+    video.user = this.state.userId
+    video._id = null
     API.saveVideo(video)
     .then(res => window.location ="profile")
     .catch(err => console.log(err))
@@ -159,13 +168,13 @@ class ClassicFormPage extends React.Component
           {/* Trending Results */}
           <MDBRow className="py-5">
             {this.state.videos.map( video => (
-              <MainCard
+              <SavedCard
                 title={video.title}
                 thumbnailUrl={video.thumbnailUrl}
                 videoUrl={video.videoUrl}
                 description={video.description}
                 key={video._id}
-                saveVideo={(event) => this.saveVideo(video, event)}
+                saveExistingVideo={(event) => this.saveExistingVideo(video, event)}
               />
 
             ) )}

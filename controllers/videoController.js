@@ -18,6 +18,7 @@ module.exports = {
   findByUserId: function (req, res) {
     db.Video
     .find({user: req.params.user})
+    .sort( { _id: -1 } )
     .then( dbModel => res.json( dbModel ) )
       .catch( err => res.status( 422 ).json( err ) );
   },
