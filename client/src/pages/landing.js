@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/MainNav/index";
+import MainCard from "../components/MainCard"
 // import { FaBeer } from 'react-icons/fa';
 
 import
@@ -22,13 +23,29 @@ class ClassicFormPage extends React.Component
 {
   state = {
     collapseID: "",
-    search: ""
+    search: "",
+    searchResults: [],
+    videos: []
+
   };
+
+  componentDidMount ()
+  {
+    this.loadPreviousSearch()
+  }
 
   toggleCollapse = collapseID => () =>
     this.setState( prevState => ( {
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     } ) );
+
+
+  loadPreviousSearch = () =>
+  {
+    API.savedSearch()
+      .then( res => { this.setState( { videos: res.data } ); console.log( " this is previous search data from function ", res.data ) } )
+      .catch( err => console.log( err ) )
+  }
 
   inputChange = event =>
   {
@@ -44,18 +61,18 @@ class ClassicFormPage extends React.Component
   {
     event.preventDefault()
     API.topicSearch( this.state.search )
-      .then( res => this.setState( { search: "" } ) )
+      .then( res => { this.setState( { searchResults: res.data } ); console.log( "This is the current search data ", res.data ) } )
       .catch( err => console.log( err ) );
   }
 
 
   render ()
   {
-   
+
     return (
-      
+
       <div id="classicformpage">
-         <Navbar/>
+        <Navbar />
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
             <MDBContainer>
@@ -101,9 +118,32 @@ class ClassicFormPage extends React.Component
         </MDBView>
         <MDBContainer>
           <MDBRow className="py-5">
-            <MDBCol md="12" className="text-center">
+            {this.state.searchResults.map( video => (
+              <MainCard
+                title={video.title}
+                thumbnailUrl={video.thumbnailUrl}
+                videoUrl={video.videoUrl}
+                description={video.description}
+                key={video._id}
+              />
 
-            </MDBCol>
+            ) )}
+          </MDBRow>
+        </MDBContainer>
+
+
+        <MDBContainer>
+          <MDBRow className="py-5">
+            {this.state.videos.map( video => (
+              <MainCard
+                title={video.title}
+                thumbnailUrl={video.thumbnailUrl}
+                videoUrl={video.videoUrl}
+                description={video.description}
+                key={video._id}
+              />
+
+            ) )}
           </MDBRow>
         </MDBContainer>
       </div>

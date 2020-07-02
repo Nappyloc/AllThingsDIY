@@ -35,5 +35,13 @@ export default {
   {
     return axios.get( "api/google/search/" + searchTopic )
 
+  },
+
+  // Returns recent saved videos
+  savedSearch: function ()
+  {
+    return axios.get( "/api/video/" )
   }
+
+  
 };

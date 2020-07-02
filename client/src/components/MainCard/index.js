@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
-const CardExample = () => {
+const CardExample = (props) => {
   return (
       
     <MDBCol>
@@ -9,11 +9,11 @@ const CardExample = () => {
         <br></br>
         <br></br>
       <MDBCard style={{ width: "30rem" }}>
-        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+        <img className="img-fluid" src={props.thumbnailUrl} />
         <MDBCardBody>
-          <MDBCardTitle>Card title</MDBCardTitle>
+          <MDBCardTitle>{props.title}</MDBCardTitle>
           <MDBCardText>
-            Description
+            {props.description}
           </MDBCardText>
           <MDBBtn color="primary">Save video</MDBBtn>
         </MDBCardBody>
