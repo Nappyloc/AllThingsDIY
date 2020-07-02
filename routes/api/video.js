@@ -26,7 +26,12 @@ router
 
 // Matches with "/api/video/delete" & Video controller remove
 router
-.route("/delete")
+.route("/delete/:id")
 .delete(videoController.remove)
+
+
+router
+.route("/user/:user")
+.get(videoController.findByUserId)
 
 module.exports = router;
