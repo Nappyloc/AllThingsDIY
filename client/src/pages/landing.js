@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/MainNav/index";
 import MainCard from "../components/MainCard"
+
 // import { FaBeer } from 'react-icons/fa';
 
 import
@@ -17,6 +18,9 @@ import
 } from "mdbreact";
 import "./landing.css";
 import API from "../utils/API";
+const cookie = require("cookie-parser");
+// const user = res.cookie.userid
+
 
 
 class ClassicFormPage extends React.Component
@@ -25,13 +29,21 @@ class ClassicFormPage extends React.Component
     collapseID: "",
     search: "",
     searchResults: [],
-    videos: []
+    videos: [],
+    userId: null,
 
   };
 
   componentDidMount ()
   {
     this.loadPreviousSearch()
+    const cookieValue = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('id'));
+  if(cookieValue) {
+    const id = cookieValue.split('=')[1]
+  this.setState({userId: id})}
+  
   }
 
   toggleCollapse = collapseID => () =>
@@ -63,6 +75,14 @@ class ClassicFormPage extends React.Component
     API.topicSearch( this.state.search )
       .then( res => { this.setState( { searchResults: res.data } ); console.log( "This is the current search data ", res.data ) } )
       .catch( err => console.log( err ) );
+  }
+
+  saveVideo = (video, event) => {
+    event.preventDefault()
+    video.user = this.state.userId
+    API.saveVideo(video)
+    .then(res => window.location ="profile")
+    .catch(err => console.log(err))
   }
 
 
@@ -117,6 +137,7 @@ class ClassicFormPage extends React.Component
           </MDBMask>
         </MDBView>
         <MDBContainer>
+          {/* Search Results */}
           <MDBRow className="py-5">
             {this.state.searchResults.map( video => (
               <MainCard
@@ -125,6 +146,8 @@ class ClassicFormPage extends React.Component
                 videoUrl={video.videoUrl}
                 description={video.description}
                 key={video._id}
+                // pass event as parameter in the function to be able to pass and evoke evaluation
+                saveVideo={(event) => this.saveVideo(video,event)}
               />
 
             ) )}
@@ -133,6 +156,7 @@ class ClassicFormPage extends React.Component
 
 
         <MDBContainer>
+          {/* Trending Results */}
           <MDBRow className="py-5">
             {this.state.videos.map( video => (
               <MainCard
@@ -141,6 +165,7 @@ class ClassicFormPage extends React.Component
                 videoUrl={video.videoUrl}
                 description={video.description}
                 key={video._id}
+                saveVideo={(event) => this.saveVideo(video, event)}
               />
 
             ) )}
