@@ -4,29 +4,106 @@ import { FaTwitter,FaFacebookSquare,FaGithub } from 'react-icons/fa';
 import Card from "../components/ProfileCard/index";
 import { MDBCol,MDBRow , MDBJumbotron,MDBCardImage,MDBCardTitle,MDBCardBody,MDBCardText,MDBContainer,MDBIcon,MDBBtn} from "mdbreact";
 import "./profile.css"
+import API from "../utils/API";
 
-export default () => (
+
+class ProfilePage extends React.Component
+{
+  state = {
+    savedVideos: [],
+    userId: null,
+    loadedVideos: []
+  }
+
+  componentDidMount ()
+  {
+
+    const cookieValue = document.cookie
+      .split( '; ' )
+      .find( row => row.startsWith( 'id' ) );
+      console.log(cookieValue)
+    if ( cookieValue )
+    {
+      const id = cookieValue.split( '=' )[ 1 ]
+      this.setState( { userId: id } )
+      this.loadSavedVideos(id)
+    }
     
-  <MDBContainer>
-    <Navbar/>
-    <br/><br/><br/><br/>
-    <MDBRow>
-    <MDBJumbotron style={{ padding: 0 }}>
-            <MDBCol className="text-white text-center py-5 px-4 my-5" style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
-              <MDBCol className="py-5">
-                <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">Welcome to your profile page</MDBCardTitle>
-                <p className="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui, dolorum!
-                </p>
-                <MDBBtn outline color="white" className="mb-5"><MDBIcon icon="clone" className="mr-2"></MDBIcon> View your saved projects</MDBBtn>
-              </MDBCol>
-            </MDBCol>
-          </MDBJumbotron>
-    </MDBRow>
-    <MDBRow>
-      <MDBCol>
-        <Card/>
+  }
+
+
+
+  loadSavedVideos = (id  ) =>
+  {
+
+    API.loadMyVideos(id)
+      .then( res => { this.setState( { loadedVideos: res.data } ); console.log( res.data ) } )
+      .catch( err => console.log( err ) )
+
+  }
+
+  deleteVideo = (video, event) => {
+    event.preventDefault()
+    API.deleteVideo(video._id)
+    .then(res => this.loadSavedVideos(this.state.userId))
+    .catch(err => console.log(err))
+
+    
+    
+  }
+
+
+
+
+
+  render ()
+  {
+    return (
+      <MDBContainer>
+        <Navbar />
+        <br /><br /><br />
+        <MDBRow>
+          <MDBCol>
+            EMPTy
       </MDBCol>
-    </MDBRow>
-  </MDBContainer>
-);
+        </MDBRow>
+        <MDBRow className="py-5">
+          {this.state.loadedVideos.map( video => (
+            <Card
+              title={video.title}
+              thumbnailUrl={video.thumbnailUrl}
+              videoUrl={video.videoUrl}
+              description={video.description}
+              key={video._id}
+              // pass event as parameter in the function to be able to pass and evoke evaluation
+              deleteVideo={( event ) => this.deleteVideo( video, event )}
+            ></Card>
+
+
+
+
+          ) )}
+        </MDBRow>
+      </MDBContainer>
+
+
+    )
+  }
+
+}
+
+export default ProfilePage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,7 +9,7 @@ export default {
   // Save a video to the database
   saveVideo: function ( videoData )
   {
-    return axios.post( "/api/video/save/", videoData )
+    return axios.post( "/api/video/save", videoData )
   },
   // Gets all videos from the database
   getAllVideos: function ()
@@ -17,7 +17,7 @@ export default {
     return axios.get( "api/video/all/" );
   },
   // Deletes the book with the given id
-  deleteBook: function ( id )
+  deleteVideo: function ( id )
   {
     return axios.delete( "/api/video/delete/" + id );
   },
@@ -35,5 +35,18 @@ export default {
   {
     return axios.get( "api/google/search/" + searchTopic )
 
+  },
+
+  // Returns recent saved videos
+  savedSearch: function ()
+  {
+    return axios.get( "/api/video/" )
+  },
+
+  // Returns videos saved by logged in user
+  loadMyVideos: function(user) {
+    return axios.get("api/video/user/" + user)
   }
+
+  
 };

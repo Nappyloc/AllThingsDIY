@@ -1,4 +1,5 @@
 import React from "react";
+import Logout from "../LogoutBtn"
 
 // import { FaBeer } from 'react-icons/fa';
 
@@ -74,7 +75,9 @@ class ClassicFormPage extends React.Component {
                     <MDBNavItem active>
                      You are succesfully logged in
                       <MDBNavLink to="/logout">Logout</MDBNavLink>
+
                     </MDBNavItem>
+                    <Logout/>
                     </MDBNavbarNav>
                 </MDBCollapse>
               </MDBContainer>

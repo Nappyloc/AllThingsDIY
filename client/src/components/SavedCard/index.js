@@ -1,7 +1,6 @@
 import React from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
-
 const CardExample = (props) => {
   return (
       
@@ -18,7 +17,7 @@ const CardExample = (props) => {
           <MDBCardText>
             {props.description}
           </MDBCardText>
-          <MDBBtn onClick={props.saveVideo} color="primary" key={props.key} >Save video</MDBBtn>
+          <MDBBtn onClick={props.saveExistingVideo} color="primary" key={props.key} >Save video</MDBBtn>
         </MDBCardBody>
       </MDBCard>
     </MDBCol>

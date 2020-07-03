@@ -1,5 +1,6 @@
 import React from "react";
 // import { FaBeer } from 'react-icons/fa';
+import Logout from "../LogoutBtn"
 
 import {
   MDBNavbar,
@@ -14,6 +15,7 @@ import {
   MDBDropdownMenu, 
   MDBDropdownItem
 } from "mdbreact";
+
 
 
 
@@ -61,6 +63,7 @@ class ClassicFormPage extends React.Component {
                     <MDBNavItem active>
                       <MDBNavLink to="/login">Login</MDBNavLink>
                     </MDBNavItem>
+                    <Logout/>
                     <MDBNavItem active>
                       <MDBNavLink to="/signup"> SignUp</MDBNavLink> 
                     </MDBNavItem>

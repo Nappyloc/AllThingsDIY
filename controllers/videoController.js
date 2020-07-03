@@ -1,4 +1,5 @@
 const db = require( "../models" );
+const  mongoose  = require( "mongoose" );
 
 // Defining methods for the videoController
 module.exports = {
@@ -10,6 +11,15 @@ module.exports = {
       .sort( { date: -1 } )
       .limit( 5 )
       .then( dbModel => res.json( dbModel ) )
+      .catch( err => res.status( 422 ).json( err ) );
+  },
+
+  // returns videos for logged in user
+  findByUserId: function (req, res) {
+    db.Video
+    .find({user: req.params.user})
+    .sort( { _id: -1 } )
+    .then( dbModel => res.json( dbModel ) )
       .catch( err => res.status( 422 ).json( err ) );
   },
 
@@ -34,6 +44,7 @@ module.exports = {
   // Creates a new video in the database
   create: function ( req, res )
   {
+    
     db.Video
       .create( req.body )
       .then( dbModel => res.json( dbModel ) )

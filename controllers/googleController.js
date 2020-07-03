@@ -10,13 +10,16 @@ module.exports =
 
         axios.get
 
-            ( "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=DIY%20" + searchTopic + "&key=" + API_KEY,
+            ( "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=DIY%20" + searchTopic + "&key=" + API_KEY,
 
                 {
                     headers: {
                         'Accept': 'application/json'
                     }
+                    
                 }
+                
+            
 
 
 
