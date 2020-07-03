@@ -11,7 +11,7 @@ const CardExample = (props) => {
       <MDBCard style={{ width: "30rem" }}>
         <MDBCardImage className="img-fluid" src={props.thumbnailUrl} waves />
         <MDBCardBody>
-          <a href={props.videoUrl}>Watch Video</a>
+        <a style={{display: "table-cell"}} href={props.videoUrl} target="_blank" rel="noopener noreferrer">Watch Video</a>
    
   <MDBCardTitle>{props.title}</MDBCardTitle>
           <MDBCardText>
