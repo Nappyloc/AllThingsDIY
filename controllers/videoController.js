@@ -9,7 +9,7 @@ module.exports = {
     db.Video
       .find( req.query )
       .sort( { date: -1 } )
-      .limit( 5 )
+      .limit( 6 )
       .then( dbModel => res.json( dbModel ) )
       .catch( err => res.status( 422 ).json( err ) );
   },
