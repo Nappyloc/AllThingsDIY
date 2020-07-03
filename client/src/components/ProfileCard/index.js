@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBRow } from 'mdbreact';
 
 const CardExample = (props) => {
   return (
@@ -8,16 +8,24 @@ const CardExample = (props) => {
         <br></br>
         <br></br>
         <br></br>
-      <MDBCard style={{ width: "30rem" }}>
+      <MDBCard style={{ width: "20rem" }}>
         <MDBCardImage className="img-fluid" src={props.thumbnailUrl} waves />
         <MDBCardBody>
-        <a style={{display: "table-cell"}} href={props.videoUrl} target="_blank" rel="noopener noreferrer">Watch Video</a>
-   
-  <MDBCardTitle>{props.title}</MDBCardTitle>
-          <MDBCardText>
-            {props.description}
-          </MDBCardText>
-          <MDBBtn onClick={props.deleteVideo} id={props._id} color="primary">Delete</MDBBtn>
+          <MDBRow>
+            <MDBCardTitle>{props.title}</MDBCardTitle>
+            <MDBCardText>
+              {props.description}
+            </MDBCardText>
+          </MDBRow>
+          <br/>
+          <MDBRow>
+            <MDBCol>
+              <MDBBtn onClick={props.deleteVideo} id={props._id} color="primary">Delete</MDBBtn>
+            </MDBCol>
+            <MDBCol>
+              <MDBBtn color="primary" href={props.videoUrl} target="_blank" rel="noopener noreferrer">Watch Video</MDBBtn>
+            </MDBCol>
+          </MDBRow>
         </MDBCardBody>
       </MDBCard>
     </MDBCol>

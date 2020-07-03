@@ -78,19 +78,27 @@ class ClassicFormPage extends React.Component
 
   saveVideo = (video, event) => {
     event.preventDefault()
-    video.user = this.state.userId
-    API.saveVideo(video)
-    .then(res => window.location ="profile")
-    .catch(err => console.log(err))
+    if(this.state.userId===null) {
+      window.location = "/login"
+    } else {
+      video.user = this.state.userId
+      API.saveVideo(video)
+      .then(res => window.location ="profile")
+      .catch(err => console.log(err))
+    }
   }
 
   saveExistingVideo = (video, event) => {
     event.preventDefault()
-    video.user = this.state.userId
-    video._id = null
-    API.saveVideo(video)
-    .then(res => window.location ="profile")
-    .catch(err => console.log(err))
+    if(this.state.userId===null) {
+      window.location = "/login"
+    } else {
+      video.user = this.state.userId
+      video._id = null
+      API.saveVideo(video)
+      .then(res => window.location ="profile")
+      .catch(err => console.log(err))
+    }
   }
 
 
@@ -145,6 +153,7 @@ class ClassicFormPage extends React.Component
           </MDBMask>
         </MDBView>
         <MDBContainer>
+          <h1>Search Results</h1>
           {/* Search Results */}
           <MDBRow className="py-5">
             {this.state.searchResults.map( video => (
@@ -164,6 +173,8 @@ class ClassicFormPage extends React.Component
 
 
         <MDBContainer>
+          <hr/>
+          <h1>Trending Searches</h1>
           {/* Trending Results */}
           <MDBRow className="py-5">
             {this.state.videos.map( video => (
