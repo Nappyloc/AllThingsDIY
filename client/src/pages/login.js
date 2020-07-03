@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Navbar from "../components/MainNav/index"
+import Navbar from "../components/LoginNav/index"
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBInput } from 'mdbreact';
 
 class FormPage extends Component {

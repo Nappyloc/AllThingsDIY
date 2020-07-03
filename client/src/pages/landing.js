@@ -4,7 +4,6 @@ import MainCard from "../components/MainCard";
 import SavedCard from "../components/SavedCard"
 
 // import { FaBeer } from 'react-icons/fa';
-
 import
 {
 
@@ -137,7 +136,7 @@ class ClassicFormPage extends React.Component
                     >
                       Search
                 </MDBBtn>
-
+              
 
                   </div>
                 </MDBCol>

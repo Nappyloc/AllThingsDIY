@@ -51,18 +51,6 @@ class ClassicFormPage extends React.Component {
                   isOpen={this.state.collapseID}
                   navbar
                 >
-                     <MDBDropdown>
-        <MDBDropdownToggle caret color="primary">
-          Dropdown
-        </MDBDropdownToggle>
-        <MDBDropdownMenu  basic >
-          <MDBDropdownItem>Action</MDBDropdownItem>
-          <MDBDropdownItem>Another Action</MDBDropdownItem>
-          <MDBDropdownItem>Something else here</MDBDropdownItem>
-          <MDBDropdownItem divider />
-          <MDBDropdownItem>Separated link</MDBDropdownItem>
-        </MDBDropdownMenu>
-      </MDBDropdown>
                <MDBNavbarNav left>
                     <MDBNavItem active>
                       <MDBNavLink to="/">Home</MDBNavLink>

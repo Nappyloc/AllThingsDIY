@@ -1,6 +1,4 @@
 import React from "react";
-import Logout from "../LogoutBtn"
-
 // import { FaBeer } from 'react-icons/fa';
 
 import {
@@ -11,10 +9,6 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBContainer,
-  MDBDropdown,
-  MDBDropdownToggle, 
-  MDBDropdownMenu, 
-  MDBDropdownItem
 } from "mdbreact";
 
 
@@ -51,18 +45,6 @@ class ClassicFormPage extends React.Component {
                   isOpen={this.state.collapseID}
                   navbar
                 >
-                     <MDBDropdown>
-        <MDBDropdownToggle caret color="primary">
-          Profile
-        </MDBDropdownToggle>
-        <MDBDropdownMenu  basic >
-          <MDBDropdownItem>Your Profile</MDBDropdownItem>
-          <MDBDropdownItem>Change Password</MDBDropdownItem>
-          <MDBDropdownItem>Something else here</MDBDropdownItem>
-          <MDBDropdownItem divider />
-          <MDBDropdownItem>Separated link</MDBDropdownItem>
-        </MDBDropdownMenu>
-      </MDBDropdown>
                <MDBNavbarNav left>
                     <MDBNavItem active>
                       <MDBNavLink to="/">Home</MDBNavLink>
@@ -73,11 +55,8 @@ class ClassicFormPage extends React.Component {
                   </MDBNavbarNav>
                       <MDBNavbarNav right>
                     <MDBNavItem active>
-                     You are succesfully logged in
-                      <MDBNavLink to="/logout">Logout</MDBNavLink>
-
+                      <MDBNavLink to="/signup"> SignUp</MDBNavLink> 
                     </MDBNavItem>
-                    <Logout/>
                     </MDBNavbarNav>
                 </MDBCollapse>
               </MDBContainer>
@@ -85,6 +64,8 @@ class ClassicFormPage extends React.Component {
            
             {this.state.collapseID && overlay}
           </div>
+        
+       
       </div>
     );
   }
