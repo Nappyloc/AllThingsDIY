@@ -1,8 +1,7 @@
 import React from "react";
 import Navbar from "../components/ProfileNav/index";
-import { FaTwitter,FaFacebookSquare,FaGithub } from 'react-icons/fa';
 import Card from "../components/ProfileCard/index";
-import { MDBCol,MDBRow , MDBJumbotron,MDBCardImage,MDBCardTitle,MDBCardBody,MDBCardText,MDBContainer,MDBIcon,MDBBtn} from "mdbreact";
+import { MDBCol,MDBRow, MDBContainer } from "mdbreact";
 import "./profile.css"
 import API from "../utils/API";
 
@@ -64,7 +63,6 @@ class ProfilePage extends React.Component
         <br /><br /><br />
         <MDBRow>
           <MDBCol>
-            EMPTy
       </MDBCol>
         </MDBRow>
         <MDBRow className="py-5">
