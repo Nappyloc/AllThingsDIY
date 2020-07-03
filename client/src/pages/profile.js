@@ -11,7 +11,8 @@ class ProfilePage extends React.Component
   state = {
     savedVideos: [],
     userId: null,
-    loadedVideos: []
+    loadedVideos: [],
+    userLogged: false
   }
 
   componentDidMount ()
@@ -29,9 +30,7 @@ class ProfilePage extends React.Component
     }
     
   }
-
-
-
+  
   loadSavedVideos = (id  ) =>
   {
 
@@ -42,17 +41,13 @@ class ProfilePage extends React.Component
   }
 
   deleteVideo = (video, event) => {
+
     event.preventDefault()
     API.deleteVideo(video._id)
     .then(res => this.loadSavedVideos(this.state.userId))
     .catch(err => console.log(err))
 
-    
-    
   }
-
-
-
 
 
   render ()
@@ -76,9 +71,6 @@ class ProfilePage extends React.Component
               // pass event as parameter in the function to be able to pass and evoke evaluation
               deleteVideo={( event ) => this.deleteVideo( video, event )}
             ></Card>
-
-
-
 
           ) )}
         </MDBRow>

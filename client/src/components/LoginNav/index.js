@@ -54,8 +54,8 @@ class ClassicFormPage extends React.Component {
                        </MDBNavItem>
                   </MDBNavbarNav>
                       <MDBNavbarNav right>
-                    <MDBNavItem active>
-                      <MDBNavLink to="/signup"> SignUp</MDBNavLink> 
+                      <MDBNavItem active>
+                      <MDBNavLink to="/login">Login</MDBNavLink>
                     </MDBNavItem>
                     </MDBNavbarNav>
                 </MDBCollapse>

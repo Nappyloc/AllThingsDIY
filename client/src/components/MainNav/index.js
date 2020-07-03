@@ -1,6 +1,7 @@
 import React from "react";
 // import { FaBeer } from 'react-icons/fa';
 import Logout from "../LogoutBtn"
+import Login from"../LoginBtn";
 
 import {
   MDBNavbar,
@@ -17,9 +18,25 @@ import {
 
 class ClassicFormPage extends React.Component {
   state = {
-    collapseID: ""
+    collapseID: "",
+    loginState:false
   };
-
+  componentDidMount ()
+  {
+    
+    const cookieValue = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('id'));
+  if(cookieValue) {
+    
+    this.setState({loginState:true})
+    
+  }
+  else
+  {
+    this.setState({loginState:false})
+  }
+  }
   toggleCollapse = collapseID => () =>
     this.setState(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
@@ -53,10 +70,7 @@ class ClassicFormPage extends React.Component {
                        </MDBNavItem>
                   </MDBNavbarNav>
                       <MDBNavbarNav right>
-                    <MDBNavItem active>
-                      <MDBNavLink to="/login">Login</MDBNavLink>
-                    </MDBNavItem>
-                    <Logout/>
+                      { (this.state.loginState) ?  <Logout/> : <Login/>}
                     <MDBNavItem active>
                       <MDBNavLink to="/signup"> SignUp</MDBNavLink> 
                     </MDBNavItem>
