@@ -9,10 +9,6 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBContainer,
-  MDBDropdown,
-  MDBDropdownToggle, 
-  MDBDropdownMenu, 
-  MDBDropdownItem
 } from "mdbreact";
 
 
@@ -58,9 +54,6 @@ class ClassicFormPage extends React.Component {
                        </MDBNavItem>
                   </MDBNavbarNav>
                       <MDBNavbarNav right>
-                    <MDBNavItem active>
-                      <MDBNavLink to="/login">Login</MDBNavLink>
-                    </MDBNavItem>
                     <MDBNavItem active>
                       <MDBNavLink to="/signup"> SignUp</MDBNavLink> 
                     </MDBNavItem>

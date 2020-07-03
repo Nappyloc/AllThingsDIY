@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/MainNav/index";
 // import { FaBeer } from 'react-icons/fa';
-
 import
 {
 
@@ -91,7 +90,7 @@ class ClassicFormPage extends React.Component
                     >
                       Search
                 </MDBBtn>
-
+              
 
                   </div>
                 </MDBCol>

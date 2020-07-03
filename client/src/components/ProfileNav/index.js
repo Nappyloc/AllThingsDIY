@@ -52,11 +52,11 @@ class ClassicFormPage extends React.Component {
                 >
                      <MDBDropdown>
         <MDBDropdownToggle caret color="primary">
-          Dropdown
+          Profile
         </MDBDropdownToggle>
         <MDBDropdownMenu  basic >
-          <MDBDropdownItem>Action</MDBDropdownItem>
-          <MDBDropdownItem>Another Action</MDBDropdownItem>
+          <MDBDropdownItem>Your Profile</MDBDropdownItem>
+          <MDBDropdownItem>Change Password</MDBDropdownItem>
           <MDBDropdownItem>Something else here</MDBDropdownItem>
           <MDBDropdownItem divider />
           <MDBDropdownItem>Separated link</MDBDropdownItem>
@@ -73,6 +73,7 @@ class ClassicFormPage extends React.Component {
                       <MDBNavbarNav right>
                     <MDBNavItem active>
                      You are succesfully logged in
+                      <MDBNavLink to="/logout">Logout</MDBNavLink>
                     </MDBNavItem>
                     </MDBNavbarNav>
                 </MDBCollapse>
