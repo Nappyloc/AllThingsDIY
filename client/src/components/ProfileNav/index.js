@@ -1,5 +1,6 @@
 import React from "react";
-import Logout from "../LogoutBtn"
+import Logout from "../LogoutBtn";
+import Login from "../LoginBtn";
 
 // import { FaBeer } from 'react-icons/fa';
 
@@ -21,14 +22,37 @@ import {
 
 class ClassicFormPage extends React.Component {
   state = {
-    collapseID: ""
+    collapseID: "",
+    loginState:false
   };
 
+  componentDidMount ()
+  {
+    
+    const cookieValue = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('id'));
+  if(cookieValue) {
+    
+    this.setState({ loginState:true })
+    
+    
+  }
+  else
+  {
+    this.setState( {loginState:false})
+    
+  }
+  console.log(this.state.loginState)
+  console.log(this.state.userLogged)
+  
+}
   toggleCollapse = collapseID => () =>
     this.setState(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
 
+    
     
   render() {
     const overlay = (
@@ -69,15 +93,11 @@ class ClassicFormPage extends React.Component {
                     </MDBNavItem>
                   </MDBNavbarNav>
                       <MDBNavbarNav right>
-                    <MDBNavItem active>
-                     You are succesfully logged in
-                    </MDBNavItem>
-                    <Logout/>
+                    { (this.state.loginState) ?  <Logout/> : <Login/>}
                     </MDBNavbarNav>
                 </MDBCollapse>
               </MDBContainer>
             </MDBNavbar>
-           
             {this.state.collapseID && overlay}
           </div>
       </div>

@@ -11,6 +11,10 @@ import { MDBBtn } from "mdbreact";
 // That way we don't have to define them all individually
 class LogoutButton extends React.Component {
 
+  state = {
+    userLogged: ""
+  };
+
   
 
   Logout() {
@@ -24,7 +28,7 @@ class LogoutButton extends React.Component {
       })
       window.location = "/"
 
-    }
+    } 
 
   }
 
