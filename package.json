@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/Nappyloc/AllThingsDIY/issues"
   },
-  "homepage": "https://github.com/Nappyloc/AllThingsDIY#readme"
+  "homepage": "https://github.com/Nappyloc/AllThingsDIY#readme",
+  "engines": {
+    "node": "14.4.0"
+  }
 }

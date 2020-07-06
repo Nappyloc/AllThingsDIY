@@ -1,5 +1,5 @@
 const axios = require( "axios" ).default
-const API_KEY = require( "../key" )
+const API_KEY = require( "../key" ).API_Key
 
 module.exports =
 {
@@ -16,10 +16,10 @@ module.exports =
                     headers: {
                         'Accept': 'application/json'
                     }
-                    
+
                 }
-                
-            
+
+
 
 
 
