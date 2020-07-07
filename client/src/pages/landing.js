@@ -109,6 +109,10 @@ class ClassicFormPage extends React.Component
 
       <div id="classicformpage">
         <Navbar />
+      <br/>
+      <br/>
+      <br/>
+
         <MDBView>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
             <MDBContainer>
@@ -118,11 +122,10 @@ class ClassicFormPage extends React.Component
                   delay=".3s"
                   className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5"
                 >
-                  <hr className="hr-light" />
                 </MDBAnimation>
               </MDBRow>
               <MDBRow>
-                <MDBCol>
+                <MDBCol size="10">
                   <div className="md-form my-0">
                     <input
                       className="form-control mr-sm-2"
@@ -135,25 +138,29 @@ class ClassicFormPage extends React.Component
                       width="350px"
                       height="250px"
                     />
-                    <MDBBtn
-                      color='success'
+                    
+              
+
+                  </div>
+                </MDBCol>
+                <MDBCol>
+                <MDBBtn
+                      outline color="danger"
                       rounded
                       type='button'
-                      className=""
                       onClick={this.diySearch}
                     >
                       Search
                 </MDBBtn>
-              
 
-                  </div>
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
           </MDBMask>
         </MDBView>
         <MDBContainer>
-          <h1>Search Results</h1>
+          <br/>
+          <h1 className="results">Search Results</h1>
           {/* Search Results */}
           <MDBRow className="py-5">
             {this.state.searchResults.map( video => (
@@ -174,7 +181,7 @@ class ClassicFormPage extends React.Component
 
         <MDBContainer>
           <hr/>
-          <h1>Trending Searches</h1>
+          <h1 className="results">Trending Searches</h1>
           {/* Trending Results */}
           <MDBRow className="py-5">
             {this.state.videos.map( video => (

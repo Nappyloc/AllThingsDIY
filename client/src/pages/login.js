@@ -35,10 +35,10 @@ class FormPage extends Component {
     return (
       
       <MDBContainer>
-        <br></br>
-        <br></br>
-        <br></br>
+       
         <Navbar/>
+        <br/>
+        <br/>
         <MDBRow>
           <MDBCard
             className='card-image center'

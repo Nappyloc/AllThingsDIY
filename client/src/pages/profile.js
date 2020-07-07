@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/ProfileNav/index";
 import Card from "../components/ProfileCard/index";
 import { MDBCol,MDBRow, MDBContainer } from "mdbreact";
-import "./profile.css"
+// import "./profile.css"
 import API from "../utils/API";
 
 

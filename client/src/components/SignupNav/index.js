@@ -35,7 +35,7 @@ class ClassicFormPage extends React.Component {
     return (
       <div id="classicformpage">
           <div>
-            <MDBNavbar dark expand="lg" fixed="top">
+            <MDBNavbar expand="lg">
               <MDBContainer>
                 <MDBNavbarToggler
                   onClick={this.toggleCollapse("navbarCollapse")}
@@ -45,14 +45,19 @@ class ClassicFormPage extends React.Component {
                   isOpen={this.state.collapseID}
                   navbar
                 >
-               <MDBNavbarNav left>
-                    <MDBNavItem active>
-                      <MDBNavLink to="/">Home</MDBNavLink>
+               <MDBNavbarNav  left>
+                    <MDBNavItem  active>
+                      <MDBNavLink  to="/">Home</MDBNavLink>
                     </MDBNavItem>
                         <MDBNavItem>
                            <MDBNavLink to="/profile">Profile</MDBNavLink>
                        </MDBNavItem>
                   </MDBNavbarNav>
+                  <MDBNavbarNav center>
+                  <MDBNavItem>
+                           <img src="https://github.com/hungle913/images/blob/master/ClickyGame/DIY/DIY_Banner.jpg?raw=true"/>
+                       </MDBNavItem>
+                       </MDBNavbarNav>
                       <MDBNavbarNav right>
                     <MDBNavItem active>
                       <MDBNavLink to="/login">Login</MDBNavLink>
