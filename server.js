@@ -18,8 +18,8 @@ if ( process.env.NODE_ENV === "production" )
 app.use( routes );
 
 // Connect to the Mongo DB
-//  mongoose.connect( process.env.MONGODB_URI || "mongodb://" + MONGO_USER + "@ds161134.mlab.com:61134/heroku_ndtwk6dp", { useNewUrlParser: true, useUnifiedTopology: true } );
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/youTubeSearch", { useNewUrlParser: true, useUnifiedTopology: true } );
+mongoose.connect( process.env.MONGODB_URI || "mongodb://" + MONGO_USER + "@ds161134.mlab.com:61134/heroku_ndtwk6dp", { useNewUrlParser: true, useUnifiedTopology: true } );
+// mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/youTubeSearch", { useNewUrlParser: true, useUnifiedTopology: true } );
 
 // Start the API server
 app.listen( PORT, function ()
