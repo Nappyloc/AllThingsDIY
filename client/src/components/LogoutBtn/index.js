@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBBtn } from "mdbreact";
+import { MDBBtn, MDBNavLink } from "mdbreact";
 // import "./style.css";
 
 
@@ -36,11 +36,11 @@ class LogoutButton extends React.Component {
   {
     return (
       <MDBBtn
-        outline color="danger"
-        className=""
         onClick={() => this.Logout()}
       >
+        <MDBNavLink to="#">
       Logout
+      </MDBNavLink>
       </MDBBtn>
     );
   }

@@ -15,8 +15,7 @@ class ProfileButton extends React.Component {
   render()
   {
     return (
-      <MDBBtn
-        outline color="danger">
+      <MDBBtn>
         <MDBNavLink to= "/profile">Profile</MDBNavLink>
       </MDBBtn>
     );
