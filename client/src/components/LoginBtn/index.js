@@ -15,8 +15,7 @@ class LogoutButton extends React.Component {
   render()
   {
     return (
-      <MDBBtn
-        outline color="danger">
+      <MDBBtn>
         <MDBNavLink to= "/login">Login</MDBNavLink>
       </MDBBtn>
     );

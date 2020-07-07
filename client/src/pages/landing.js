@@ -13,7 +13,8 @@ import
   MDBView,
   MDBMask,
   MDBBtn,
-  MDBCol
+  MDBCol,
+  MDBNavLink
 
 } from "mdbreact";
 import "./landing.css";
@@ -145,12 +146,11 @@ class ClassicFormPage extends React.Component
                 </MDBCol>
                 <MDBCol>
                 <MDBBtn
-                      outline color="danger"
-                      rounded
-                      type='button'
                       onClick={this.diySearch}
                     >
+                      <MDBNavLink to="#">
                       Search
+                      </MDBNavLink>
                 </MDBBtn>
 
                 </MDBCol>
