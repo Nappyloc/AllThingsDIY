@@ -1,3 +1,6 @@
 body {
-    background-image: url("http://mdbootstrap.com/img/Photos/Others/images/91.jpg");
+    background-image: url("https://github.com/hungle913/images/blob/master/ClickyGame/DIY/DIY_Background.jpg?raw=true");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
 }

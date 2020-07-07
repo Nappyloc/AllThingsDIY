@@ -2,6 +2,7 @@ import React from "react";
 // import { FaBeer } from 'react-icons/fa';
 import Logout from "../LogoutBtn"
 import Login from"../LoginBtn";
+import Profile from "../ProfileBtn"
 
 import {
   MDBNavbar,
@@ -54,7 +55,7 @@ class ClassicFormPage extends React.Component {
     return (
       <div id="classicformpage">
           <div>
-            <MDBNavbar dark expand="lg" fixed="top">
+            <MDBNavbar expand="lg" >
               <MDBContainer>
                 <MDBNavbarToggler
                   onClick={this.toggleCollapse("navbarCollapse")}
@@ -66,9 +67,16 @@ class ClassicFormPage extends React.Component {
                 >
                <MDBNavbarNav left>
                         <MDBNavItem>
-                           <MDBNavLink to="/profile">Profile</MDBNavLink>
+                          {(this.state.loginState) ? <Profile/> : null}
+                           {/* <MDBNavLink to="/profile">Profile</MDBNavLink> */}
                        </MDBNavItem>
+                       
                   </MDBNavbarNav>
+                  <MDBNavbarNav center>
+                  <MDBNavItem>
+                           <img src="https://github.com/hungle913/images/blob/master/ClickyGame/DIY/DIY_Banner.jpg?raw=true"/>
+                       </MDBNavItem>
+                       </MDBNavbarNav>
                       <MDBNavbarNav right>
                       { (this.state.loginState) ?  <Logout/> : <Login/>}
                     </MDBNavbarNav>

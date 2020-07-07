@@ -39,13 +39,15 @@ class FormPage extends Component {
         <br></br>
         <br></br>
         <br></br>
+        <br/>
+        <br/>
         <MDBRow>
           <MDBCard
             className='card-image center'
             style={{
               backgroundColor:
                 'default-color-dark',
-              width: '28rem'
+              width: '280rem'
             }}
           >
           <div className='text-dark rgba-stylish-strong py-5 px-5 z-depth-4'>
