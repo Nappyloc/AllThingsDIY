@@ -41,6 +41,7 @@ This application is hosted on Heroku: [CLICK ME!](https://allthingsdiy.herokuapp
 * dotenv
 * CSS
 * Javascript
+* YouTube API
 
 ## Built With
 
