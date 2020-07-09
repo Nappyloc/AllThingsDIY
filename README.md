@@ -29,8 +29,6 @@ This application is hosted on Heroku: [CLICK ME!](https://allthingsdiy.herokuapp
 
 ## Technologies Used
 
-* CSS
-* Javascript
 * React
 * React-Router-Dom
 * React-Cookie
@@ -41,6 +39,8 @@ This application is hosted on Heroku: [CLICK ME!](https://allthingsdiy.herokuapp
 * express
 * Mongoose
 * dotenv
+* CSS
+* Javascript
 
 ## Built With
 
